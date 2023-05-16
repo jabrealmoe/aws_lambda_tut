@@ -18,7 +18,6 @@ export class AwsLambdaTutStack extends cdk.Stack {
         commands: ['npm run build', 'npx cdk synth']
       })
     })
-
     const testingStage = pipeline.addStage(new  JabrealsPipelineAppStage(this,   "testing", {
       env: {account: Aws.ACCOUNT_ID, region: Aws.REGION}
     }))
