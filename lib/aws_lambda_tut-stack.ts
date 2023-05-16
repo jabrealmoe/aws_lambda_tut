@@ -19,12 +19,12 @@ export class AwsLambdaTutStack extends cdk.Stack {
       })
     })
 
-    const testingStage = pipeline.addStage(new  JabrealsPipelineAppStage(this,   "test", {
+    const testingStage = pipeline.addStage(new  JabrealsPipelineAppStage(this,   "testing", {
       env: {account: Aws.ACCOUNT_ID, region: Aws.REGION}
     }))
     testingStage.addPost(new  ManualApprovalStep('Manual  Approval before production'))
 
-    const prodStage = pipeline.addStage(new  JabrealsPipelineAppStage(this,   "prod", {
+    const prodStage = pipeline.addStage(new  JabrealsPipelineAppStage(this,   "production", {
       env: {account: Aws.ACCOUNT_ID, region: Aws.REGION}
     }))
   }
