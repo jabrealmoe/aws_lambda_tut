@@ -15,7 +15,7 @@ export class AwsLambdaTutStack extends cdk.Stack {
         input: CodePipelineSource.gitHub('jabrealmoe/aws_lambda_tut', 'main', {
 
         }),
-        commands: ['npm ci', 'npm run build', 'npx cdk synth']
+        commands: ['npm run build', 'npx cdk synth']
       })
     })
 
